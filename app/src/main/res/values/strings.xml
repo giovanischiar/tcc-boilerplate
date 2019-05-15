@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TCC Boilerplate</string>
+    <string name="this_boilerplate_contains">Este boileplate contém</string>
+    <string name="arch_components">Componentes Arquiteturais</string>
+    <string name="Library">Biblotecas</string>
+    <string name="name">Nome:</string>
+    <string name="description">Descrição:</string>
+    <string name="library">Biblioteca:</string>
+    <string name="title">Título</string>
+</resources>
