@@ -15,9 +15,11 @@ import org.junit.Test
 import org.mockito.Mockito.verify
 
 /**
- * Local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
+ * Testa o [BoilerplateViewModel]
+ * @property rule permite-se utilizar LiveData no JUnit.
+ * @property archComponentViewData usado para verificar se buscando os componentes arquitetuais do repositório mock
+ * retorna um igual a esse.
+ * @property boilerplateViewModel usado para testar todos os testes da classe.
  */
 class BoilerplateViewModelUnitTest {
     @get:Rule
@@ -35,16 +37,26 @@ class BoilerplateViewModelUnitTest {
 
     private lateinit var boilerplateViewModel: BoilerplateViewModel
 
+    /**
+     * Executa antes de todos os testes. Cria-se um [BoilerplateViewModel] passando como parâmetro um repositório mock.
+     */
     @Before
     fun prepare() {
         boilerplateViewModel = BoilerplateViewModel(MockArchComponentRepository())
     }
 
+    /**
+     * Verifica se o atributo archComponents de [boilerplateViewModel] é inicializado com null.
+     */
     @Test
     fun archComponents_isInitiallyNull() {
         assertNull(boilerplateViewModel.archComponents.value)
     }
 
+    /**
+     * Verifica se o componente buscado no repository definido no construtor chamando fetch de [boilerplateViewModel]
+     * ele atualiza o [boilerplateViewModel]
+     */
     @Test
     fun fetch_archComponentsPostsCorrectArchComponentViewData() {
         val observer: Observer<List<ArchComponentViewData>> = mock()
@@ -54,6 +66,10 @@ class BoilerplateViewModelUnitTest {
         verify(observer).onChanged(listOf(archComponentViewData))
     }
 
+    /**
+     * Verifica se o componente buscado no repository definido no construtor chamando fetch é igual ao
+     * [archComponentViewData]
+     */
     @Test
     fun fetch_archComponentsContainsCorrectArchComponentViewData() {
         boilerplateViewModel.fetch()

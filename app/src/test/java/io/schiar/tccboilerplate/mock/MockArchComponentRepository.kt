@@ -4,7 +4,14 @@ import io.schiar.tccboilerplate.model.ArchComponent
 import io.schiar.tccboilerplate.model.Library
 import io.schiar.tccboilerplate.model.repository.ArchComponentRepositoryInterface
 
+/**
+ * Mock específico de um repositório de componente arquitetural. Usado para os testes unitários.
+ */
 class MockArchComponentRepository : ArchComponentRepositoryInterface {
+    /**
+     * retorna sempre a mesma lista com um único componente arquitetural.
+     * @param callback usado para receber a mesma lista com um único componente arquitetural.
+     */
     override fun fetch(callback: (List<ArchComponent>) -> Unit) {
         val archComponent = ArchComponent(
             "Mock",
