@@ -24,7 +24,18 @@ class ArchComponentRepository: ArchComponentRepositoryInterface {
         ArchComponent("ViewModel",
             "Componente que carrega os dados para serem escritos na View",
             Library("androidx.lifecycle:lifecycle-viewmodel-ktx", listOf(2, 0, 0))
-        ))
+        ),
+
+        ArchComponent("LiveData",
+            "Classe observável que carrega dados. Quando o dado é modificado, notifica quem o observa",
+            Library("androidx.core:core-ktx:", listOf(1, 0, 0))
+        ),
+
+        ArchComponent("Navigation",
+            "Controla a navegação da aplicação",
+            Library("android.arch.navigation:navigation-fragment:", listOf(1, 0, 0))
+        )
+        )
 
     /**
      * Busca a lista de componentes arquiteturais a ser exibida na View.

@@ -11,13 +11,11 @@ import io.schiar.tccboilerplate.model.ArchComponent
  * conhecer de fato de onde esses objetos vêm e onde são armazenados (internet, banco de dados, caches, etc).
  * Isso permite que todos os componentes que usam o repository possuam um baixo
  * acomplamento com as camadas de serviço e persistência da aplicação.
- *
- * @property selectedCar carro atual selecionado.
  */
 interface ArchComponentRepositoryInterface {
     /**
      * Busca a lista de componentes arquiteturais a ser exibida na View.
-     * @param callback usado para receber a lista de carros buscada.
+     * @param callback usado para receber a lista de componentes arquiteturais buscada.
      */
     fun fetch(callback: (List<ArchComponent>) -> Unit )
 }
