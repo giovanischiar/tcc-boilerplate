@@ -3,7 +3,6 @@ package io.schiar.tccboilerplate.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.schiar.tccboilerplate.model.ArchComponent
-import io.schiar.tccboilerplate.model.Library
 import io.schiar.tccboilerplate.model.repository.ArchComponentRepository
 import io.schiar.tccboilerplate.model.repository.ArchComponentRepositoryInterface
 import io.schiar.tccboilerplate.view.viewdata.ArchComponentViewData

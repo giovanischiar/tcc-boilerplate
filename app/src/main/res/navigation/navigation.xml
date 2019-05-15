@@ -6,10 +6,27 @@
     android:id="@+id/navigation"
     app:startDestination="@id/boilerplate_fragment"
 >
+
     <fragment
         android:id="@+id/boilerplate_fragment"
         android:label="@string/title"
         android:name="io.schiar.tccboilerplate.view.BoilerplateFragment"
-        tools:layout="@layout/boilerplate_fragment"
+        tools:layout="@layout/fragment_boilerplate"
+    >
+        <action
+            android:id="@+id/boilerplate_to_other"
+            app:destination="@id/other_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        />
+    </fragment>
+
+    <fragment
+        android:id="@+id/other_fragment"
+        android:label="@string/other_fragment"
+        android:name="io.schiar.tccboilerplate.view.OtherFragment"
     />
+
 </navigation>
