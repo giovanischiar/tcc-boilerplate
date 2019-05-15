@@ -12,7 +12,7 @@ class ArchComponentRepository: ArchComponentRepositoryInterface {
 
         ArchComponent("ViewModel",
             "Componente que carrega os dados para serem escritos na View",
-            Library("androidx.lifecycle:lifecycle-viewmodel-ktx:", listOf(2, 0, 0))
+            Library("androidx.lifecycle:lifecycle-viewmodel-ktx", listOf(2, 0, 0))
         ))
 
     override fun fetch(callback: (List<ArchComponent>) -> Unit) {
