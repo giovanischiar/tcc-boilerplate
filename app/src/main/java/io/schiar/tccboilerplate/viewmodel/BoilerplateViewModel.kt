@@ -8,6 +8,12 @@ import io.schiar.tccboilerplate.model.repository.ArchComponentRepositoryInterfac
 import io.schiar.tccboilerplate.view.viewdata.ArchComponentViewData
 import io.schiar.tccboilerplate.view.viewdata.LibraryViewData
 
+/**
+ * Recebe mensagens da visão solicitando dados.
+ * Formata esses dados e os disponibiliza para a visão através dos objetos LiveData.
+ * @property archComponentRepository fornecedor de objetos de modelo para o ViewModel.
+ * @property archComponents lista atual de componentes arquiteturais.
+ */
 class BoilerplateViewModel(
     private val archComponentRepository: ArchComponentRepositoryInterface = ArchComponentRepository()
 ) : ViewModel() {
@@ -16,6 +22,9 @@ class BoilerplateViewModel(
         MutableLiveData<List<ArchComponentViewData>>()
     }
 
+    /**
+     * Busca os dados de componentes arquiteturais e atualiza o LiveData de [archComponents].
+     */
     fun fetch() {
         archComponentRepository.fetch {
             archComponents.postValue(it.map {archComponent: ArchComponent ->

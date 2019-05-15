@@ -8,8 +8,16 @@ import io.schiar.tccboilerplate.view.viewdata.ArchComponentViewData
 import io.schiar.tccboilerplate.view.viewdata.canonicalName
 import kotlinx.android.synthetic.main.view_arch_component.view.*
 
+/**
+ * Utilizado para tratamento de dados do ViewModel para serem apresentados na View através de data binding.
+ */
 object BindAdapters {
 
+    /**
+     * É criado para cada componente arquiterual um componente de visão e adicionado ao layout dentro do XML.
+     * @param layout onde carregar os componentes de visão.
+     * @param archComponents os componentes de visão, a lista de componentes arquiteturais.
+     */
     @BindingAdapter("archComponents")
     @JvmStatic
     fun configureArchComponents(layout: LinearLayout, archComponents: List<ArchComponentViewData>?) {
