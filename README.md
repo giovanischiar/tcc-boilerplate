@@ -127,7 +127,7 @@ Muitas vezes é necessária geração de objetos "falsos" para a execução de t
 É o gerenciador de pacotes acoplado ao Android. É com ele que é gerenciado as bibliotecas utilizadas em aplicações android. A seguir mostrarei as configurações do Gradle  personalizadas para esse boileplate.
 
 ## Plugins
-```groove
+```groovy
 apply plugin: 'com.android.application' /* Módulo padrão de aplicações Android. */
 
 apply plugin: 'kotlin-android' /* Habilita a utilização da linguagem Kotlin. */
@@ -140,7 +140,7 @@ apply plugin: 'org.jetbrains.dokka-android' /* Geração de HTML para documenta�
 ```
 
 ## Dependências
-```groove
+```groovy
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar']) /* Se existir qualquer biblioteca adicionada manualmente esse comando detecta e inclui na compilação */
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version" /* Biblioteca oficial Kotlin */
@@ -163,7 +163,7 @@ dependencies {
 
 Há também um código adicional para a utilização do DataBinding:
 
-```groove
+```groovy
 dataBinding {
     enabled = true
 }
