@@ -82,7 +82,7 @@ Responsável pelas classes que representam as telas da aplicação, também est�
 ![](readme-res/view.svg)
 
 #### [`/java/io/schiar/tccboilerplate/view-model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/viewmodel)
-Responsável pela implementação dos LiveData. Esses LiveData irão ser utilizados pelo XMLs da view para a exibição, observação e atualização dos dados. Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado os LiveData serem encapsulados ViewData. Segue esquemático detalhado:
+Responsável pela implementação dos LiveData. Esses LiveData irão ser utilizados pelo XMLs da view para a exibição graças ao DataBinding e os [Bind Adapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters), observação e atualização dos dados. Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado os LiveData serem encapsulados ViewData. Segue esquemático detalhado:
 
 ![](readme-res/view-model.svg)
 
@@ -170,7 +170,7 @@ Esse boilerplate foi desenvido visando as melhores práticas de engenharia de so
 * ViewModels foram pensados para funcionar como a janela do modelo para a view. Em um fluxo recomendado o ViewModel, com sua referência ao Repository busca dados do modelo, monta objetos de visão (ViewDatas) e deixa disponível para o XML ter acesso;
 * Esse boilerplate incentiva o desenvolvimento de aplicativos de atividade única (single activity). Assim podemos tirar o máximo de proveito do componente Navigation e a [Google também recomenda que aplicações funcionem dessa maneira](https://www.youtube.com/watch?v=2k8x8V77CrU);
 * Recomenda-se a utilização de classes de modelo para executar a lógica da aplicação;
-* A utilização de DataBinding junto com BindAdapters é encorajada. Utilize sempre que possível;
+* A utilização de DataBinding junto com [BindAdapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters) é encorajada. Utilize sempre que possível;
 * Utilize sempre que possível os arquivos de constantes localizados em `/res` para colocar as constantes de sua aplicação;
 
 # Como começo?
