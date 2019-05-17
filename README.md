@@ -16,9 +16,8 @@ Com esse boilerplate, é implementado para fins de consulta e a fim de exemplifi
 # Testes
 É apresentado o [Mockito](https://site.mockito.org/) para o mock de LiveData e outras coisas necessárias para realização de testes unitários.
 
-# Documentação
+# [Documentação](https://github.com/giovanischiar/tcc-boilerplate/documentation/index.md)
 Todo código do boilerplate está documentado, e é utilizado o [Dokka](https://github.com/Kotlin/dokka) para a geração de páginas de markdown.
-[Disponível neste repositório](https://github.com/giovanischiar/tcc-boilerplate/documentation/index.md)
 
 # Estrutura de diretório
 
