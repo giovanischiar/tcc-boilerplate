@@ -1,27 +1,27 @@
 # Boilerplate para construção de aplicações Android
 
-# Arquitetura
-A arquitetura desse boilerplate foi feita para ser nos moldes do MVVM.
+## Arquitetura
+A arquitetura desse boilerplate segue os moldes do MVVM, ao mesmo tempo que usufrui dos mais recentes componentes arquiteturais do Android.
 
-# Android Jetpack
-Este boilerplate utiliza uma boa parte dos componentes arquiteturais:
+### Android Jetpack
+Este boilerplate utiliza uma boa parte dos componentes arquiteturais do Android Jetpack:
 * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
 * [Navigation](https://developer.android.com/guide/navigation/navigation-getting-started)
-* [DataBinding](https://developer.android.com/topic/libraries/data-binding?hl=pt-br)
+* [DataBinding](https://developer.android.com/topic/libraries/data-binding)
 
-# Aplicação amostra
-Com esse boilerplate, é implementado para fins de consulta e a fim de exemplificar o uso da arquiterura, um aplicativo que mostra os componentes arquiteturais contidos nesse boilerplate, é mostrado como integrar o DataBinding, e exemplifica o uso do Navigation, contém também um fragmento simples e um viewmodel prontos para a aplicação ser implementada.
+## Código de amostra
+Com esse boilerplate, é implementado um aplicativo que mostra os componentes arquiteturais contidos no próprio boilerplate, para fins de consulta e a fim de exemplificar o uso da arquiterura. Esse código contém pelo menos um exemplo de cada componente da arquitetura apresentada. É mostrado como integrar o DataBinding, como fazer uso do Navigation, assim como também tem um fragmento simples e um viewmodel prontos para a aplicação ser implementada.
 
-# Testes
-É apresentado o [Mockito](https://site.mockito.org/) para o mock de LiveData e outras coisas necessárias para realização de testes unitários.
+## Testes
+É apresentado o [Mockito](https://site.mockito.org/) para o mock de componentes da arquitetura, de forma a permitir os mais diversos testes unitários das camadas de Model e ViewModel, como por exemplo os objetos LiveData.
 
-# [Documentação](https://github.com/giovanischiar/tcc-boilerplate/blob/master/documentation/index.md)
+## [Documentação](https://github.com/giovanischiar/tcc-boilerplate/blob/master/documentation/index.md)
 Todo código do boilerplate está documentado, e é utilizado o [Dokka](https://github.com/Kotlin/dokka) para a geração de páginas de markdown.
 
-# Estrutura de diretório
+## Estrutura de diretório
 
-## Pasta main
+### Pasta main
 
 ```bash
 .
@@ -67,44 +67,40 @@ Todo código do boilerplate está documentado, e é utilizado o [Dokka](https://
         └── styles.xml
 ```
 
-Esta pasta contém todos os arquivos de código e xmls necessários para a construção da aplicação. 
+Esta pasta contém todos os arquivos de código e XMLs necessários para a construção da aplicação. 
 
-### [`/java`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/)
-Apesar do nome dentro dela está todo o código da aplicação e é feita 100% em Kotlin. Os pacotes estão dividos segundo o padrão da arquitetura MVVM. Segue esquemático de uma  arquitetura genérica MVVM:
-
+#### [`/java`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/)
+Apesar do nome, dentro dela está todo o código da aplicação, a qual é feita 100% em Kotlin. Os pacotes estão dividos segundo o padrão da arquitetura MVVM. Segue esquemático de uma arquitetura genérica MVVM:
 ![](readme-res/mvvm.svg)
 
-#### [`/java/io/schiar/tccboilerplate/model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/model)
-Onde são implementadas as regras de negócio da apliacação. Dentro desse pacote também estão os repositórios, responsáveis pela requisição de dados. Segue o esquemático de um model genérico:
-
+##### [`/java/io/schiar/tccboilerplate/model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/model)
+Onde são implementadas as regras de negócio da aplicação. Dentro desse pacote também estão os repositórios, responsáveis pela requisição de dados. Segue o esquemático de um model genérico:
 ![](readme-res/model.svg)
 
-#### [`/java/io/schiar/tccboilerplate/view`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/view)
-Responsável pelas classes que representam as telas da aplicação, também estão os ViewDatas, utilizados para a formatação de filtragem de objetos do modelo. Com ViewData, a view conhece estritamente o que necessário para a exibição dos dados. Segue o esquemático de um view genérico:
-
+##### [`/java/io/schiar/tccboilerplate/view`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/view)
+Responsável pelas classes que representam as telas da aplicação. É onde também estão os ViewDatas, utilizados para a formatação de filtragem de objetos do modelo. Com os objetos ViewData, a view conhece estritamente o que é necessário para a exibição dos dados. Segue o esquemático de uma view genérica:
 ![](readme-res/view.svg)
 
-#### [`/java/io/schiar/tccboilerplate/view-model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/viewmodel)
-Responsável pela implementação dos LiveData. Esses LiveData irão ser utilizados pelo XMLs da view para a exibição graças ao DataBinding e os [Bind Adapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters), observação e atualização dos dados. Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado os LiveData serem encapsulados ViewData. Segue o esquemático de um view model genérico:
-
+##### [`/java/io/schiar/tccboilerplate/view-model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/viewmodel)
+Responsável pela implementação dos LiveData. Esses LiveData expõem os dados que a view precisa mostrar na tela. Para fazer isso, a view pode pegar as informações desses LiveData ou observar quaisquer mudanças que ocorrem neles, atualizando a tela de forma reativa. Esses LiveData podem também ser referenciados diretamente pelos XMLs da view para a exibição dos dados, graças ao uso de DataBinding e os [Bind Adapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters). Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado que os LiveData sejam encapsulados por objetos ViewData. Segue o esquemático de um view model genérico:
 ![](readme-res/view-model.svg)
 
-### [`/res`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res)
-Na pasta res estão os xmls se apoio da aplicação. 
+#### [`/res`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res)
+Na pasta res estão os XMLs de apoio à aplicação. 
 
-#### `/res/drawable-*` e `/res/mipmap-*`
-Carregam todo os ícones (ou eventuais imagens) da aplicação nos mais diversos tamanhos de tela (existe uma pasta pra cada tamanho de `Drawable` e `Mipmap` ocultadas nesse exemplo para simplificação). 
+##### `/res/drawable-*` e `/res/mipmap-*`
+Carregam todo os ícones (ou eventuais imagens) da aplicação nos mais diversos tamanhos de tela (existe uma pasta pra cada tamanho de `Drawable` e `Mipmap`, ocultadas nesse exemplo para simplificação). 
 
-#### [`/res/layout`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/layout)
+##### [`/res/layout`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/layout)
 Contém os XML que representam os componentes de visão da aplicação. Cada fragmento está aqui representado. No método `onCreateView(...)` de cada fragmento da pasta `/java/io/schiar/tccboilerplate/view` é carregado o seu arquivo XML localizado nessa pasta. Os XML dessas pastas possuem acesso a métodos e LiveData de ViewModels graças ao DataBinding. O fragmento carrega o XML através do Navigation e passa a referência do ViewModel para ele.
 
-#### [`/res/navigation`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/navigation)
+##### [`/res/navigation`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/navigation)
 Contém um único XML que serve para descrever todas as transições que devem ocorrer entre os fragmentos da aplicação.
 
-#### [`/res/values`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/values)
-Contém constantes diversas do programa: cores, dimensões, strings, e estilos. Todos cada um em seu próprio XML e podendo ser utlizados em fragmentos e XMLs.
+##### [`/res/values`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/values)
+Contém constantes diversas do programa: cores, dimensões, strings, e estilos. Cada um fica em seu próprio XML, e todos podem ser utlizados em fragmentos e XMLs.
 
-## Pasta test
+### Pasta test
 ```bash
 .
 └── java
@@ -117,16 +113,16 @@ Contém constantes diversas do programa: cores, dimensões, strings, e estilos. 
                     └── MockArchComponentRepository.kt
 ```
 
-### [`/java/io/schiar/tccboilerplate/`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/test/java/io/schiar/tccboilerplate)
-Aqui conterá os [testes unitários](https://en.wikipedia.org/wiki/Unit_testing) da aplicação.
+#### [`/java/io/schiar/tccboilerplate/`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/test/java/io/schiar/tccboilerplate)
+Aqui ficam os [testes unitários](https://en.wikipedia.org/wiki/Unit_testing) da aplicação.
 
-### [`/java/io/schiar/tccboilerplate/mock`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/test/java/io/schiar/tccboilerplate/mock)
-Muitas vezes é necessária geração de objetos "falsos" para a execução de testes unitários, esses objetos são chamados de mock. Irão servir de suporte aos seus testes.
+##### [`/java/io/schiar/tccboilerplate/mock`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/test/java/io/schiar/tccboilerplate/mock)
+Muitas vezes é necessária a geração de objetos "falsos" para a execução de testes unitários. Esses objetos são chamados de mock. Irão servir de suporte aos testes.
 
-# [Gradle](https://en.wikipedia.org/wiki/Gradle)
-É o gerenciador de pacotes acoplado ao Android. É com ele que é gerenciado as bibliotecas utilizadas em aplicações android. A seguir mostrarei as configurações do Gradle  personalizadas para esse boileplate.
+## [Gradle](https://en.wikipedia.org/wiki/Gradle)
+É o gerenciador de pacotes acoplado ao Android. É com ele que é gerenciado as bibliotecas utilizadas em aplicações Android. A seguir serão mostradas as configurações do Gradle personalizadas para esse boileplate.
 
-## Plugins
+### Plugins
 ```groovy
 apply plugin: 'com.android.application' /* Módulo padrão de aplicações Android. */
 
@@ -139,7 +135,7 @@ apply plugin: 'kotlin-kapt' /* Necessário para o DataBinding */
 apply plugin: 'org.jetbrains.dokka-android' /* Geração de HTML para documentação */
 ```
 
-## Dependências
+### Dependências
 ```groovy
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar']) /* Se existir qualquer biblioteca adicionada manualmente esse comando detecta e inclui na compilação */
@@ -169,15 +165,18 @@ dataBinding {
 }
 ```
 
-# Orientações Gerais
-Esse boilerplate foi desenvido visando as melhores práticas de engenharia de software para desenvolvimento de aplicações Android. Aqui vão algumas orientações para a melhor utilização desse boilerplate.
-* ViewModels não podem carregar referências vindas de View;
-* ViewModels foram pensados para funcionar como a janela do modelo para a view. Em um fluxo recomendado o ViewModel, com sua referência ao Repository busca dados do modelo, monta objetos de visão (ViewDatas) e deixa disponível para o XML ter acesso;
-* Esse boilerplate incentiva o desenvolvimento de aplicativos de atividade única (single activity). Assim podemos tirar o máximo de proveito do componente Navigation e a [Google também recomenda que aplicações funcionem dessa maneira](https://www.youtube.com/watch?v=2k8x8V77CrU);
+## Orientações Gerais
+Esse boilerplate foi desenvolvido visando as melhores práticas de engenharia de software para desenvolvimento de aplicações Android. Aqui estão algumas orientações para a melhor utilização desse boilerplate.
+* ViewModels não podem possuir referências à classes da View, especialmente aquelas do framework Android;
+* ViewModels foram pensados para funcionar como a janela do modelo para a view. Em um fluxo recomendado, o ViewModel, com sua referência ao Repository, busca dados do modelo, monta objetos de visão (ViewDatas) e os deixa disponíveis para a view ter acesso;
+* Esse boilerplate incentiva o desenvolvimento de aplicativos de atividade única (single activity). Assim pode-se tirar o máximo de proveito do componente Navigation e a [Google também recomenda que aplicações funcionem dessa maneira](https://www.youtube.com/watch?v=2k8x8V77CrU);
 * Recomenda-se a utilização de classes de modelo para executar a lógica da aplicação;
-* A utilização de DataBinding junto com [BindAdapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters) é encorajada. Utilize sempre que possível;
-* Utilize sempre que possível os arquivos de constantes localizados em `/res` para colocar as constantes de sua aplicação;
+* A utilização de DataBinding junto com [BindAdapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters) é encorajada. Recomenda-se utilizar essa combinação sempre que possível;
+* Recomenda-se utilizar sempre que possível os arquivos de constantes localizados em `/res` para colocar as constantes da aplicação;
 
-# Como começo?
-Clone esse repositório, e abra-o no Android Studio. Utilize como exemplo as classes pré implementadas, [Aqui possui outro exemplo que utiliza as melhores práticas](https://github.com/giovanischiar/tcc) Edite as classes para formar sua própria aplicação. [Mude o package id e o nome dos pacotes para ser o da sua própria aplicação](https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html).
+## Como começar?
+* Clone esse repositório
+* Abra-o no Android Studio
+* Utilize como exemplo as classes pré implementadas. [Aqui possui outro exemplo que utiliza as melhores práticas](https://github.com/giovanischiar/tcc).
+* Edite as classes para formar sua própria aplicação. [Mude o package id e o nome dos pacotes para ser o da sua própria aplicação](https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html).
 
