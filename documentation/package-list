@@ -1,0 +1,8 @@
+$dokka.format:gfm
+$dokka.linkExtension:md
+
+io.schiar.tccboilerplate.model
+io.schiar.tccboilerplate.model.repository
+io.schiar.tccboilerplate.view
+io.schiar.tccboilerplate.view.viewdata
+io.schiar.tccboilerplate.viewmodel

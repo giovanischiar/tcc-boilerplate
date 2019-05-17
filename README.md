@@ -16,6 +16,10 @@ Com esse boilerplate, é implementado para fins de consulta e a fim de exemplifi
 # Testes
 É apresentado o [Mockito](https://site.mockito.org/) para o mock de LiveData e outras coisas necessárias para realização de testes unitários.
 
+# Documentação
+Todo código do boilerplate está documentado, e é utilizado o [Dokka](https://github.com/Kotlin/dokka) para a geração de páginas de markdown.
+[Disponível neste repositório](https://github.com/giovanischiar/tcc-boilerplate/documentation/index.md)
+
 # Estrutura de diretório
 
 ## Pasta main
@@ -132,6 +136,8 @@ apply plugin: 'kotlin-android' /* Habilita a utilização da linguagem Kotlin. *
 apply plugin: 'kotlin-android-extensions' /* Usado para recursos adicionais para suplantar o código Kotlin. */
 
 apply plugin: 'kotlin-kapt' /* Necessário para o DataBinding */
+
+apply plugin: 'org.jetbrains.dokka-android' /* Geração de HTML para documentação */
 ```
 
 ## Dependências

@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'org.jetbrains.dokka-android'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -25,6 +27,11 @@ android {
 
     dataBinding {
         enabled = true
+    }
+
+    dokka {
+        outputFormat = 'gfm'
+        outputDirectory = "documentation/"
     }
 }
 
