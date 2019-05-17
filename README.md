@@ -63,39 +63,39 @@ Este boilerplate utiliza uma boa parte dos componentes arquiteturais:
 
 Esta pasta contém todos os arquivos de código e xmls necessários para a construção da aplicação. 
 
-### `/java` 
+### [`/java`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/)
 Apesar do nome dentro dela está todo o código da aplicação e é feita 100% em Kotlin. Os pacotes estão dividos segundo o padrão da arquitetura MVVM. Segue esquemático da arquitetura MVVM da aplicação:
 
 ![](readme-res/mvvm.svg)
 
-#### `/java/io/schiar/tccboilerplate/model`
+#### [`/java/io/schiar/tccboilerplate/model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/model)
 Onde são implementadas as regras de negócio da apliacação. Dentro desse pacote também estão os repositórios, responsáveis pela requisição de dados. Segue a arquitetura do model dessa aplicação:
 
 ![](readme-res/model.svg)
 
-#### `/java/io/schiar/tccboilerplate/view`
+#### [`/java/io/schiar/tccboilerplate/view`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/view)
 Responsável pelas classes que representam as telas da aplicação, também estão os ViewDatas, utilizados para a formatação de filtragem de objetos do modelo. Com ViewData, a view conhece estritamente o que necessário para a exibição dos dados. Segue esquemático detalhado:
 
 ![](readme-res/view.svg)
 
-#### `/java/io/schiar/tccboilerplate/view-model`
+#### [`/java/io/schiar/tccboilerplate/view-model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/viewmodel)
 Responsável pela implementação dos LiveData. Esses LiveData irão ser utilizados pelo XMLs da view para a exibição, observação e atualização dos dados. Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado os LiveData serem encapsulados ViewData. Segue esquemático detalhado:
 
 ![](readme-res/view-model.svg)
 
-### `/res`
+### [`/res`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res)
 Na pasta res estão os xmls se apoio da aplicação. 
 
 #### `/res/drawable-*` e `/res/mipmap-*`
 Carregam todo os ícones (ou eventuais imagens) da aplicação nos mais diversos tamanhos de tela (existe uma pasta pra cada tamanho de `Drawable` e `Mipmap` ocultadas nesse exemplo para simplificação). 
 
-#### `/res/layout`
+#### [`/res/layout`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/layout)
 Contém os XML que representam os componentes de visão da aplicação. Cada fragmento está aqui representado. No método `onCreateView(...)` de cada fragmento da pasta `/java/io/schiar/tccboilerplate/view` é carregado o seu arquivo XML localizado nessa pasta. Os XML dessas pastas possuem acesso a métodos e LiveData de ViewModels graças ao DataBinding. O fragmento carrega o XML através do Navigation e passa a referência do ViewModel para ele.
 
-#### `/res/navigation`
+#### [`/res/navigation`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/navigation)
 Contém um único XML que serve para descrever todas as transições que devem ocorrer entre os fragmentos da aplicação.
 
-#### `values`
+#### [`/res/values`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/values)
 Contém constantes diversas do programa: cores, dimensões, strings, e estilos. Todos cada um em seu próprio XML e podendo ser utlizados em fragmentos e XMLs.
 
 ## Pasta test
@@ -111,12 +111,11 @@ Contém constantes diversas do programa: cores, dimensões, strings, e estilos. 
                     └── MockArchComponentRepository.kt
 ```
 
-### `/java/io/schiar/tccboilerplate/`
+### [`/java/io/schiar/tccboilerplate/`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/test/java/io/schiar/tccboilerplate)
 Aqui conterá os [testes unitários](https://en.wikipedia.org/wiki/Unit_testing) da aplicação.
 
-### `/java/io/schiar/tccboilerplate/mock`
+### [`/java/io/schiar/tccboilerplate/mock`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/test/java/io/schiar/tccboilerplate/mock)
 Muitas vezes é necessária geração de objetos "falsos" para a execução de testes unitários, esses objetos são chamados de mock. Irão servir de suporte aos seus testes.
-
 
 # [Gradle](https://en.wikipedia.org/wiki/Gradle)
 É o gerenciador de pacotes acoplado ao Android. É com ele que é gerenciado as bibliotecas utilizadas em aplicações android. A seguir mostrarei as configurações do Gradle  personalizadas para esse boileplate.
