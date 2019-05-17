@@ -10,6 +10,9 @@ Este boilerplate utiliza uma boa parte dos componentes arquiteturais:
 * [Navigation](https://developer.android.com/guide/navigation/navigation-getting-started)
 * [DataBinding](https://developer.android.com/topic/libraries/data-binding?hl=pt-br)
 
+# Aplicação amostra
+Com esse boilerplate, é implementado para fins de consulta e a fim de exemplificar o uso da arquiterura, um aplicativo que mostra os componentes arquiteturais contidos nesse boilerplate, é mostrado como integrar o DataBinding, e exemplifica o uso do Navigation, contém também um fragmento simples e um viewmodel prontos para a aplicação ser implementada.
+
 # Testes
 É apresentado o [Mockito](https://site.mockito.org/) para o mock de LiveData e outras coisas necessárias para realização de testes unitários.
 
