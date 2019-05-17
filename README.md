@@ -70,17 +70,17 @@ Todo código do boilerplate está documentado, e é utilizado o [Dokka](https://
 Esta pasta contém todos os arquivos de código e xmls necessários para a construção da aplicação. 
 
 ### [`/java`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/)
-Apesar do nome dentro dela está todo o código da aplicação e é feita 100% em Kotlin. Os pacotes estão dividos segundo o padrão da arquitetura MVVM. Segue esquemático da arquitetura MVVM da aplicação:
+Apesar do nome dentro dela está todo o código da aplicação e é feita 100% em Kotlin. Os pacotes estão dividos segundo o padrão da arquitetura MVVM. Segue esquemático de uma  arquitetura genérica MVVM:
 
 ![](readme-res/mvvm.svg)
 
 #### [`/java/io/schiar/tccboilerplate/model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/model)
-Onde são implementadas as regras de negócio da apliacação. Dentro desse pacote também estão os repositórios, responsáveis pela requisição de dados. Segue a arquitetura do model dessa aplicação:
+Onde são implementadas as regras de negócio da apliacação. Dentro desse pacote também estão os repositórios, responsáveis pela requisição de dados. Segue o esquemático de um model genérico:
 
 ![](readme-res/model.svg)
 
 #### [`/java/io/schiar/tccboilerplate/view`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/view)
-Responsável pelas classes que representam as telas da aplicação, também estão os ViewDatas, utilizados para a formatação de filtragem de objetos do modelo. Com ViewData, a view conhece estritamente o que necessário para a exibição dos dados. Segue esquemático detalhado:
+Responsável pelas classes que representam as telas da aplicação, também estão os ViewDatas, utilizados para a formatação de filtragem de objetos do modelo. Com ViewData, a view conhece estritamente o que necessário para a exibição dos dados. Segue o esquemático de um view genérico:
 
 ![](readme-res/view.svg)
 
