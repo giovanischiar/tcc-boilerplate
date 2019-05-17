@@ -16,6 +16,7 @@ Este boilerplate utiliza uma boa parte dos componentes arquiteturais:
 # Estrutura de diretório
 
 ## Pasta main
+
 ```bash
 .
 ├── AndroidManifest.xml
@@ -59,22 +60,28 @@ Este boilerplate utiliza uma boa parte dos componentes arquiteturais:
         ├── strings.xml
         └── styles.xml
 ```
+
 Esta pasta contém todos os arquivos de código e xmls necessários para a construção da aplicação. 
 
 ### `/java` 
 Apesar do nome dentro dela está todo o código da aplicação e é feita 100% em Kotlin. Os pacotes estão dividos segundo o padrão da arquitetura MVVM. Segue esquemático da arquitetura MVVM da aplicação:
+
 ![](readme-res/mvvm.svg)
 
 #### `/java/io/schiar/tccboilerplate/model`
 Onde são implementadas as regras de negócio da apliacação. Dentro desse pacote também estão os repositórios, responsáveis pela requisição de dados. Segue a arquitetura do model dessa aplicação:
+
 ![](readme-res/model.svg)
 
 #### `/java/io/schiar/tccboilerplate/view`
 Responsável pelas classes que representam as telas da aplicação, também estão os ViewDatas, utilizados para a formatação de filtragem de objetos do modelo. Com ViewData, a view conhece estritamente o que necessário para a exibição dos dados. Segue esquemático detalhado:
+
 ![](readme-res/view.svg)
 
 #### `/java/io/schiar/tccboilerplate/view-model`
-Responsável pela implementação dos LiveData. Esses LiveData irão ser utilizados pelo XMLs da view para a exibição, observação e atualização dos dados. Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado os LiveData serem encapsulados ViewData.
+Responsável pela implementação dos LiveData. Esses LiveData irão ser utilizados pelo XMLs da view para a exibição, observação e atualização dos dados. Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado os LiveData serem encapsulados ViewData. Segue esquemático detalhado:
+
+![](readme-res/view-model.svg)
 
 ### `/res`
 Na pasta res estão os xmls se apoio da aplicação. 
@@ -146,7 +153,9 @@ dependencies {
     implementation 'android.arch.navigation:navigation-ui:1.0.0' /* Permite a utilização de Navigation à aplicação */
 }
 ```
+
 Há também um código adicional para a utilização do DataBinding:
+
 ```groove
 dataBinding {
     enabled = true
@@ -161,3 +170,7 @@ Esse boilerplate foi desenvido visando as melhores práticas de engenharia de so
 * Recomenda-se a utilização de classes de modelo para executar a lógica da aplicação;
 * A utilização de DataBinding junto com BindAdapters é encorajada. Utilize sempre que possível;
 * Utilize sempre que possível os arquivos de constantes localizados em `/res` para colocar as constantes de sua aplicação;
+
+# Como começo?
+Clone esse repositório, e abra-o no Android Studio. Utilize como exemplo as classes pré implementadas, [Aqui possui outro exemplo que utiliza as melhores práticas](https://github.com/giovanischiar/tcc) Edite as classes para formar sua própria aplicação. [Mude o package id e o nome dos pacotes para ser o da sua própria aplicação](https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html).
+
