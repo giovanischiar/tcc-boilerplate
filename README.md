@@ -85,7 +85,7 @@ Responsável pelas classes que representam as telas da aplicação, também est�
 ![](readme-res/view.svg)
 
 #### [`/java/io/schiar/tccboilerplate/view-model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/viewmodel)
-Responsável pela implementação dos LiveData. Esses LiveData irão ser utilizados pelo XMLs da view para a exibição graças ao DataBinding e os [Bind Adapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters), observação e atualização dos dados. Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado os LiveData serem encapsulados ViewData. Segue esquemático detalhado:
+Responsável pela implementação dos LiveData. Esses LiveData irão ser utilizados pelo XMLs da view para a exibição graças ao DataBinding e os [Bind Adapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters), observação e atualização dos dados. Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado os LiveData serem encapsulados ViewData. Segue o esquemático de um view model genérico:
 
 ![](readme-res/view-model.svg)
 
