@@ -6,10 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import io.schiar.tccboilerplate.R
 import io.schiar.tccboilerplate.viewmodel.BoilerplateViewModel
 import io.schiar.tccboilerplate.databinding.FragmentBoilerplateBinding
+import io.schiar.tccboilerplate.view.viewdata.ArchComponentViewData
 import kotlinx.android.synthetic.main.fragment_boilerplate.view.*
 
 /**
@@ -41,6 +45,9 @@ class BoilerplateFragment : Fragment() {
         viewModel.fetch()
         val view = binding.root
         view.navigation_example_btn.setOnClickListener(::onNavigationButtonPressed)
+        viewModel.archComponents.observe(this, Observer {
+            binding.adapter = ArchComponentsListAdapter(it)
+        })
         return view
     }
 

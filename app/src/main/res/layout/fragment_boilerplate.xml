@@ -7,37 +7,36 @@
 
     <data>
         <variable name="viewModel" type="io.schiar.tccboilerplate.viewmodel.BoilerplateViewModel"/>
+        <variable name="adapter" type="io.schiar.tccboilerplate.view.ArchComponentsListAdapter"/>
     </data>
 
-    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
         <LinearLayout
-                android:orientation="vertical"
-                android:id="@+id/boilerplate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:context=".view.BoilerplateFragment"
+            android:orientation="vertical"
+            android:id="@+id/boilerplate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".view.BoilerplateFragment"
         >
             <Button
-                    android:id="@+id/navigation_example_btn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/navigation_example"
+                android:id="@+id/navigation_example_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/navigation_example"
             />
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/arch_components"
-                    android:textSize="@dimen/title_size"
-                    android:layout_marginBottom="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arch_components"
+                android:textSize="@dimen/title_size"
+                android:layout_marginBottom="15dp"
             />
-            <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:archComponents="@{viewModel.archComponents}"
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:adapter="@{adapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
         </LinearLayout>
-    </ScrollView>
 
 </layout>
 
