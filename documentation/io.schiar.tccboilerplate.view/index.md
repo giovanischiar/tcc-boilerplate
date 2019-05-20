@@ -6,7 +6,7 @@
 
 | Name | Summary |
 |---|---|
-| [BindAdapters](-bind-adapters/index.md) | `object BindAdapters`<br>Utilizado para tratamento de dados do ViewModel para serem apresentados na View através de data binding. |
+| [ArchComponentsListAdapter](-arch-components-list-adapter/index.md) | `class ArchComponentsListAdapter : Adapter<`[`ViewHolder`](-arch-components-list-adapter/-view-holder/index.md)`>`<br>Trata a lista de ViewDatas para ser exibida pelo componente [RecyclerView](#). |
 | [BoilerplateFragment](-boilerplate-fragment/index.md) | `class BoilerplateFragment : Fragment`<br>Mostra a lista de componentes arquiteturais utilizados neste boilerplate |
 | [MainActivity](-main-activity/index.md) | `class MainActivity : AppCompatActivity`<br>Atividade que controla toda a navegação dos fragmentos da aplicação. |
 | [OtherFragment](-other-fragment/index.md) | `class OtherFragment : Fragment`<br>Mostra uma string pré criada do ViewModel para fins de demonstração do DataBinding |
