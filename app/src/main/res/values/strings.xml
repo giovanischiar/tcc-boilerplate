@@ -7,6 +7,5 @@
     <string name="description">Descrição:</string>
     <string name="library">Biblioteca:</string>
     <string name="title">Título</string>
-    <string name="navigation_example">Exemplo de navegação</string>
     <string name="other_fragment">Outro fragmento</string>
 </resources>
