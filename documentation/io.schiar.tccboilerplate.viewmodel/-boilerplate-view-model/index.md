@@ -18,6 +18,7 @@ Formata esses dados e os disponibiliza para a visão através dos objetos LiveDa
 | Name | Summary |
 |---|---|
 | [archComponents](arch-components.md) | `val archComponents: MutableLiveData<`[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`ArchComponentViewData`](../../io.schiar.tccboilerplate.view.viewdata/-arch-component-view-data/index.md)`>>`<br>lista atual de componentes arquiteturais. |
+| [buttonContent](button-content.md) | `val buttonContent: MutableLiveData<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>`<br>conteúdo do botão da tela. |
 
 ### Functions
 

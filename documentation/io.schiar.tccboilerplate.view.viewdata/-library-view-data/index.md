@@ -19,8 +19,8 @@ Representação das bibliotecas do ponto de vista da visão.
 | [name](name.md) | `val name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>nome de uma biblioteca. |
 | [version](version.md) | `val version: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>versão de uma biblioteca. |
 
-### Extension Functions
+### Functions
 
 | Name | Summary |
 |---|---|
-| [canonicalName](../canonical-name.md) | `fun `[`LibraryViewData`](./index.md)`.canonicalName(): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Método auxiliar para gerar um nome completo da biblioteca. |
+| [toString](to-string.md) | `fun toString(): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Método auxiliar para gerar um nome completo da biblioteca. |
