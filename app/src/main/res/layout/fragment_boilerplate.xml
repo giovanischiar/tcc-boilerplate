@@ -29,7 +29,6 @@
                 android:text="@string/arch_components"
                 android:textSize="@dimen/title_size"
                 android:layout_marginBottom="15dp"
-                app:value="@{viewModel.buttonContent}"
             />
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
