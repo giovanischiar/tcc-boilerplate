@@ -13,6 +13,7 @@ import io.schiar.tccboilerplate.view.viewdata.LibraryViewData
  * Formata esses dados e os disponibiliza para a visão através dos objetos LiveData.
  * @property archComponentRepository fornecedor de objetos de modelo para o ViewModel.
  * @property archComponents lista atual de componentes arquiteturais.
+ * @property buttonContent conteúdo do botão da tela.
  */
 class BoilerplateViewModel(
     private val archComponentRepository: ArchComponentRepositoryInterface = ArchComponentRepository()
@@ -21,6 +22,8 @@ class BoilerplateViewModel(
     val archComponents: MutableLiveData<List<ArchComponentViewData>> by lazy {
         MutableLiveData<List<ArchComponentViewData>>()
     }
+
+    val buttonContent = MutableLiveData<String>().apply { value = "Exemplo de navegação" }
 
     /**
      * Busca os dados de componentes arquiteturais e atualiza o LiveData de [archComponents].
