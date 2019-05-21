@@ -8,12 +8,10 @@ package io.schiar.tccboilerplate.view.viewdata
 data class LibraryViewData(
     val name: String,
     val version: String
-)
-
-/**
- * Método auxiliar para gerar um nome completo da biblioteca.
- * @return o nome completo da biblioteca.
- */
-fun LibraryViewData.canonicalName(): String {
-    return "$name:$version"
+) {
+    /**
+     * Método auxiliar para gerar um nome completo da biblioteca.
+     * @return o nome completo da biblioteca.
+     */
+    override fun toString(): String = "$name:$version"
 }
