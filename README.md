@@ -177,6 +177,6 @@ Esse boilerplate foi desenvolvido visando as melhores práticas de engenharia de
 ## Como começar?
 * Clone esse repositório
 * Abra-o no Android Studio
-* Utilize como exemplo as classes pré implementadas. [Aqui possui outro exemplo que utiliza as melhores práticas](https://github.com/giovanischiar/tcc).
+* Utilize como exemplo as classes pré implementadas. [Aqui possui outro exemplo que utiliza as melhores práticas](https://github.com/giovanischiar/reservation-picker).
 * Edite as classes para formar sua própria aplicação. [Mude o package id e o nome dos pacotes para ser o da sua própria aplicação](https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html).
 
