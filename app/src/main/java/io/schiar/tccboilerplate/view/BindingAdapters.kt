@@ -11,12 +11,13 @@ object BindingAdapters {
     /**
      * É adicionado o valor a um label no [TextView]
      */
-    @BindingAdapter("value")
+    @BindingAdapter(value= ["label", "value"])
     @JvmStatic
-    fun setValue(textView: TextView, value: String) {
+    fun setLabelValue(textView: TextView, label: String, value: String?) {
+        value ?: return
         val viewText = textView.text
         val labelValue = textView.context.getString(R.string.label_value)
-        textView.text = String.format(labelValue, viewText, value)
+        textView.text = String.format(labelValue, label, value)
     }
 
 }
