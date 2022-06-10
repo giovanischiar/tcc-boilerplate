@@ -1,27 +1,29 @@
-# Boilerplate para construção de aplicações Android
+Leia essa página em [Português](https://github.com/giovanischiar/tcc-boilerplate/blob/master/README.pt.md)
 
-## Arquitetura
-A arquitetura desse boilerplate segue os moldes do MVVM, ao mesmo tempo que usufrui dos mais recentes componentes arquiteturais do Android.
+# Boilerplate to implement Android Applications
+
+## Architecture
+The architecture of this boilerplate follows MVVM directives, and it uses the most recent Android architectural components at the same time.
 
 ### Android Jetpack
-Este boilerplate utiliza uma boa parte dos componentes arquiteturais do Android Jetpack:
+This boilerplate uses most of the Jetpack Android architectural components: 
 * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
 * [Navigation](https://developer.android.com/guide/navigation/navigation-getting-started)
 * [DataBinding](https://developer.android.com/topic/libraries/data-binding)
 
-## Código de amostra
-Com esse boilerplate, é implementado um aplicativo que mostra os componentes arquiteturais contidos no próprio boilerplate, para fins de consulta e a fim de exemplificar o uso da arquiterura. Esse código contém pelo menos um exemplo de cada componente da arquitetura apresentada. É mostrado como integrar o DataBinding, como fazer uso do Navigation, assim como também tem um fragmento simples e um viewmodel prontos para a aplicação ser implementada.
+## Sample code
+Using this boilerplate, it's implemented an app that shows the architectural components included in the boilerplate, with the objective of consulting and exemplify its architeture use. This code contains at least an examplo of each component of the presented architecture. It's shown how integrate the DataBinding, how to use Navigation, as well as contains a simple Fragment and a ViewModel ready to develop an application.
 
-## Testes
-É apresentado o [Mockito](https://site.mockito.org/) para o mock de componentes da arquitetura, de forma a permitir os mais diversos testes unitários das camadas de Model e ViewModel, como por exemplo os objetos LiveData.
+## Tests
+It's presented [Mockito](https://site.mockito.org/) to mock the components of the architecture, in order to allow the most unit tests of the Model and ViewModel layers, like the LiveData objects.
 
-## [Documentação](https://github.com/giovanischiar/tcc-boilerplate/blob/master/documentation/index.md)
-Todo código do boilerplate está documentado, e é utilizado o [Dokka](https://github.com/Kotlin/dokka) para a geração de páginas de markdown.
+## [Documentation](https://github.com/giovanischiar/tcc-boilerplate/blob/master/documentation/index.md)
+All code was documented (in Portuguese, but planned to translate to English shortly) and it's utilized [Dokka](https://github.com/Kotlin/dokka) to generate the markdown pages;
 
-## Estrutura de diretório
+## Directory structure
 
-### Pasta main
+### Main folder
 
 ```bash
 .
@@ -67,44 +69,44 @@ Todo código do boilerplate está documentado, e é utilizado o [Dokka](https://
         └── styles.xml
 ```
 
-Esta pasta contém todos os arquivos de código e XMLs necessários para a construção da aplicação. 
+This folder contains all code and XML files needed in order to implement the application.
 
 #### [`/java`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/)
-Apesar do nome, dentro dela está todo o código da aplicação, a qual é feita 100% em Kotlin. Os pacotes estão dividos segundo o padrão da arquitetura MVVM. Segue esquemático de uma arquitetura genérica MVVM:
-![](readme-res/mvvm.pt-br.dark.svg#gh-dark-mode-only)
-![](readme-res/mvvm.pt-br.light.svg#gh-light-mode-only)
+Though the name, All application code it's inside of this folder, 100% kotlin coded. The packages are modeled following the MMVM architecture. Find the scheme of a generic MVVM architecture below: 
+![](readme-res/mvvm.en-us.dark.svg#gh-dark-mode-only)
+![](readme-res/mvvm.en-us.light.svg#gh-light-mode-only)
 
 ##### [`/java/io/schiar/tccboilerplate/model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/model)
-Onde são implementadas as regras de negócio da aplicação. Dentro desse pacote também estão os repositórios, responsáveis pela requisição de dados. Segue o esquemático de um model genérico:
-![](readme-res/model.pt-br.dark.svg#gh-dark-mode-only)
-![](readme-res/model.pt-br.light.svg#gh-light-mode-only)
+Where the business logic of the application are implemented. Inside this package there are also the repositories, responsable to data requests. Find the scheme of a generic model below: 
+![](readme-res/model.en-us.dark.svg#gh-dark-mode-only)
+![](readme-res/model.en-us.light.svg#gh-light-mode-only)
 
 ##### [`/java/io/schiar/tccboilerplate/view`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/view)
-Responsável pelas classes que representam as telas da aplicação. É onde também estão os ViewDatas, utilizados para a formatação de filtragem de objetos do modelo. Com os objetos ViewData, a view conhece estritamente o que é necessário para a exibição dos dados. Segue o esquemático de uma view genérica:
-![](readme-res/view.pt-br.dark.svg#gh-dark-mode-only)
-![](readme-res/view.pt-br.light.svg#gh-light-mode-only)
+Responsible for the classes that represent the application screens. It also includes the ViewDatas, utilized to formatation and filtering the Model objects. With LiveData objects, the View is strictly aware what it's needed to show the data. Find the scheme of a generic View below:
+![](readme-res/view.en-us.dark.svg#gh-dark-mode-only)
+![](readme-res/view.en-us.light.svg#gh-light-mode-only)
 
 ##### [`/java/io/schiar/tccboilerplate/view-model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/viewmodel)
-Responsável pela implementação dos LiveData. Esses LiveData expõem os dados que a view precisa mostrar na tela. Para fazer isso, a view pode pegar as informações desses LiveData ou observar quaisquer mudanças que ocorrem neles, atualizando a tela de forma reativa. Esses LiveData podem também ser referenciados diretamente pelos XMLs da view para a exibição dos dados, graças ao uso de DataBinding e os [Bind Adapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters). Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado que os LiveData sejam encapsulados por objetos ViewData. Segue o esquemático de um view model genérico:
-![](readme-res/view-model.pt-br.dark.svg#gh-dark-mode-only)
-![](readme-res/view-model.pt-br.light.svg#gh-light-mode-only)
+Responsible for the LiveData implementation. These LiveData turn avaiable the data needed for the view show on the screen. To do that, the view can retrieve information of these LiveData or observe any changes that may occur, updating the screen in a reactive way. These LiveData can also be referenced directly on the XML files of the View to show the data, it is possible because of the DataBinding and the [Bind Adapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters). Each encapsulated data change with LiveData automatically notify in all observed places. It's recommended that the LiveData objects be encapsulated into ViewData objects. Find the scheme of a generic ViewModel:
+![](readme-res/view-model.en-us.dark.svg#gh-dark-mode-only)
+![](readme-res/view-model.en-us.light.svg#gh-light-mode-only)
 
 #### [`/res`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res)
-Na pasta res estão os XMLs de apoio à aplicação. 
+In the res folder there are the XML files.
 
 ##### `/res/drawable-*` e `/res/mipmap-*`
-Carregam todo os ícones (ou eventuais imagens) da aplicação nos mais diversos tamanhos de tela (existe uma pasta pra cada tamanho de `Drawable` e `Mipmap`, ocultadas nesse exemplo para simplificação). 
+Load all icons (or images) of the application in all screen sizes (there is a folder for each size of `Drawable` and `Mipmap` hidden in this example to simplify)
 
 ##### [`/res/layout`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/layout)
-Contém os XML que representam os componentes de visão da aplicação. Cada fragmento está aqui representado. No método `onCreateView(...)` de cada fragmento da pasta `/java/io/schiar/tccboilerplate/view` é carregado o seu arquivo XML localizado nessa pasta. Os XML dessas pastas possuem acesso a métodos e LiveData de ViewModels graças ao DataBinding. O fragmento carrega o XML através do Navigation e passa a referência do ViewModel para ele.
+It contains the XML that represent the View components of the application. Each Fragment is represented here. On the `onCreateView(...)` method of each Fragment of the folder `/java/io/schiar/tccboilerplate/view` it's loaded its XML file located in this folder. The XML of these folders has access to methods and ViewModels's LiveData thanks to DataBinding. The fragment loads the XML through Navigation and pass the ViewModel's reference to it.
 
 ##### [`/res/navigation`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/navigation)
-Contém um único XML que serve para descrever todas as transições que devem ocorrer entre os fragmentos da aplicação.
+It Contains a single XML that describes all transitions that should occur between the fragments in the application.
 
 ##### [`/res/values`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res/values)
-Contém constantes diversas do programa: cores, dimensões, strings, e estilos. Cada um fica em seu próprio XML, e todos podem ser utlizados em fragmentos e XMLs.
+It contains some programs's constants: colors, dimentions, strings and styles. Each one in its own XML file, and all of them can be used in fragments and XML files.
 
-### Pasta test
+### test folder
 ```bash
 .
 └── java
@@ -118,69 +120,68 @@ Contém constantes diversas do programa: cores, dimensões, strings, e estilos. 
 ```
 
 #### [`/java/io/schiar/tccboilerplate/`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/test/java/io/schiar/tccboilerplate)
-Aqui ficam os [testes unitários](https://en.wikipedia.org/wiki/Unit_testing) da aplicação.
+Here goes the application's [unit tests](https://en.wikipedia.org/wiki/Unit_testing).
 
 ##### [`/java/io/schiar/tccboilerplate/mock`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/test/java/io/schiar/tccboilerplate/mock)
-Muitas vezes é necessária a geração de objetos "falsos" para a execução de testes unitários. Esses objetos são chamados de mock. Irão servir de suporte aos testes.
+Many times it's necessary the generation of "fake" objects when executing unit tests. These objects are called mock. That would be used when testing.
 
 ## [Gradle](https://en.wikipedia.org/wiki/Gradle)
-É o gerenciador de pacotes acoplado ao Android. É com ele que é gerenciado as bibliotecas utilizadas em aplicações Android. A seguir serão mostradas as configurações do Gradle personalizadas para esse boileplate.
+It's the Android's package manager. It manages the libraries used in Android applications. Here it will be show the personalized Gradle settings for this boilerplate.
 
 ### Plugins
 ```groovy
-apply plugin: 'com.android.application' /* Módulo padrão de aplicações Android. */
+apply plugin: 'com.android.application' /* Default module of Android applications. */
 
-apply plugin: 'kotlin-android' /* Habilita a utilização da linguagem Kotlin. */
+apply plugin: 'kotlin-android' /* It enables the Kotlin language utilization. */
 
-apply plugin: 'kotlin-android-extensions' /* Usado para recursos adicionais para suplantar o código Kotlin. */
+apply plugin: 'kotlin-android-extensions' /* Additional resources of the Kotlin language. */
 
-apply plugin: 'kotlin-kapt' /* Necessário para o DataBinding */
+apply plugin: 'kotlin-kapt' /* Databinding related plugin.*/
 
-apply plugin: 'org.jetbrains.dokka-android' /* Geração de HTML para documentação */
+apply plugin: 'org.jetbrains.dokka-android' /* HTML documentation generation. */
 ```
 
-### Dependências
+### Dependencies
 ```groovy
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar']) /* Se existir qualquer biblioteca adicionada manualmente esse comando detecta e inclui na compilação */
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version" /* Biblioteca oficial Kotlin */
-    implementation 'androidx.appcompat:appcompat:1.0.2' /* Habilita codificar para versões antigas do Android */
-    implementation 'androidx.core:core-ktx:1.0.2' /* Habilita importantes adicionais ao Kotlin como um modo simplificado de acesso ao XML pelo fragment */
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3' /* Layout avançado utilizado em layouts */
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0' /* Biblioteca adicional para utilização de componentes arquiteturais do Jetpack */
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0' /* Permite a utilização de ViewModel */
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0' /* Suporte do androidx a versões antigas */
-    testImplementation 'junit:junit:4.12' /* Criação de testes unitários */
-    testImplementation 'org.mockito:mockito-core:2.27.0' /* Criação de mocks para suporte de testes unitários */
-    testImplementation 'android.arch.core:core-testing:1.1.1' /* Criação de mocks de componentes do Android para serem utilizados em testes unitários */
-    androidTestImplementation 'androidx.test:runner:1.1.1' /* Teste instrumentado Android */
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1' /* Teste instrumentado Android */
-    kapt "com.android.databinding:compiler:3.3.2" /* Permite a utilização de DataBinding à aplicação */
-    implementation 'android.arch.navigation:navigation-fragment:1.0.0' /* Permite a utilização de Navigation à aplicação */
-    implementation 'android.arch.navigation:navigation-ui:1.0.0' /* Permite a utilização de Navigation à aplicação */
+    implementation fileTree(dir: 'libs', include: ['*.jar']) /* If theres any library added manually, this command detects and includes in the compilation */
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version" /* Kotlin official library. */
+    implementation 'androidx.appcompat:appcompat:1.0.2' /* It enables older Android version coding. */
+    implementation 'androidx.core:core-ktx:1.0.2' /* It enables important kotlin addons like a simplified way to access the XML of the fragment. */
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3' /* Advanced Layout used in layouts. */
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0' /* Additional library to using the Jetpack Architectural components. */
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0' /* It permits the ViewModel utilization. */
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0' /* Legacy older versions androidx support. */
+    testImplementation 'junit:junit:4.12' /* Unit testing creation. */
+    testImplementation 'org.mockito:mockito-core:2.27.0' /* Mocking creation to use in unit testing */
+    testImplementation 'android.arch.core:core-testing:1.1.1' /* Android component mocking creation to use in unit testing. */
+    androidTestImplementation 'androidx.test:runner:1.1.1' /* Android instrumented testing. */
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1' /* Android instrumented testing. */
+    kapt "com.android.databinding:compiler:3.3.2" /* It allows the DataBinding utilization */
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0' /* It allows the Navigation utilization */
+    implementation 'android.arch.navigation:navigation-ui:1.0.0' /* It allows the Navigation utilization */
 }
 ```
 
-Há também um código adicional para a utilização do DataBinding:
-
+There's also a aditional code to BataBinding utilization:
 ```groovy
 dataBinding {
     enabled = true
 }
 ```
 
-## Orientações Gerais
-Esse boilerplate foi desenvolvido visando as melhores práticas de engenharia de software para desenvolvimento de aplicações Android. Aqui estão algumas orientações para a melhor utilização desse boilerplate.
-* ViewModels não podem possuir referências à classes da View, especialmente aquelas do framework Android;
-* ViewModels foram pensados para funcionar como a janela do modelo para a view. Em um fluxo recomendado, o ViewModel, com sua referência ao Repository, busca dados do modelo, monta objetos de visão (ViewDatas) e os deixa disponíveis para a view ter acesso;
-* Esse boilerplate incentiva o desenvolvimento de aplicativos de atividade única (single activity). Assim pode-se tirar o máximo de proveito do componente Navigation e a [Google também recomenda que aplicações funcionem dessa maneira](https://www.youtube.com/watch?v=2k8x8V77CrU);
-* Recomenda-se a utilização de classes de modelo para executar a lógica da aplicação;
-* A utilização de DataBinding junto com [BindAdapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters) é encorajada. Recomenda-se utilizar essa combinação sempre que possível;
-* Recomenda-se utilizar sempre que possível os arquivos de constantes localizados em `/res` para colocar as constantes da aplicação;
+## General Orientations
+This boilerplate was developed having the best Android application software engeneering development practices in mind. Here are some orientations to better utilization of this boilerplate:
+* ViewModels cannot hold references to View Clasess, specially the Android Framework ones;
+* ViewModels was thinking to work as a Model window to the View. In a recommended flow, the ViewModel, with its Repository reference, fetches the model data, create ViewDatas and let it available to the View access;
+* This boilerplace encourages a single activity application development. That way you can fully use the Navigation component and [Google also recommends that application works in that way](https://www.youtube.com/watch?v=2k8x8V77CrU);
+* It recommended that model classes executes the application logic;
+* The DataBinding utilization together with [BindAdapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters) it's encouraged. It's recommendes using whenever possible;
+* It recommended whenever possible using the constant files located in `/res` to put the application's constants;
 
-## Como começar?
-* Clone esse repositório
-* Abra-o no Android Studio
-* Utilize como exemplo as classes pré implementadas. [Aqui possui outro exemplo que utiliza as melhores práticas](https://github.com/giovanischiar/reservation-picker).
-* Edite as classes para formar sua própria aplicação. [Mude o package id e o nome dos pacotes para ser o da sua própria aplicação](https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html).
+## How do I get started?
+* Clone this repository;
+* Open it on Android Studio;
+* Utilize as an example the pre implemented classes [There is another example that utilize the best practices here](https://github.com/giovanischiar/reservation-picker).
+* Edit the classes to form your own application. [Change the package id and the name of the packages to be your own application Mude o package id](https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html).
 
