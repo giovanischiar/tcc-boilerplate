@@ -76,15 +76,18 @@ Apesar do nome, dentro dela está todo o código da aplicação, a qual é feita
 
 ##### [`/java/io/schiar/tccboilerplate/model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/model)
 Onde são implementadas as regras de negócio da aplicação. Dentro desse pacote também estão os repositórios, responsáveis pela requisição de dados. Segue o esquemático de um model genérico:
-![](readme-res/model.svg)
+![](readme-res/model.pt-br.dark.svg#gh-dark-mode-only)
+![](readme-res/model.pt-br.light.svg#gh-light-mode-only)
 
 ##### [`/java/io/schiar/tccboilerplate/view`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/view)
 Responsável pelas classes que representam as telas da aplicação. É onde também estão os ViewDatas, utilizados para a formatação de filtragem de objetos do modelo. Com os objetos ViewData, a view conhece estritamente o que é necessário para a exibição dos dados. Segue o esquemático de uma view genérica:
-![](readme-res/view.svg)
+![](readme-res/view.pt-br.dark.svg#gh-dark-mode-only)
+![](readme-res/view.pt-br.light.svg#gh-light-mode-only)
 
 ##### [`/java/io/schiar/tccboilerplate/view-model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/viewmodel)
 Responsável pela implementação dos LiveData. Esses LiveData expõem os dados que a view precisa mostrar na tela. Para fazer isso, a view pode pegar as informações desses LiveData ou observar quaisquer mudanças que ocorrem neles, atualizando a tela de forma reativa. Esses LiveData podem também ser referenciados diretamente pelos XMLs da view para a exibição dos dados, graças ao uso de DataBinding e os [Bind Adapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters). Cada mudança de dados encapsulados com LiveData automaticamente notifica todos os lugares em que são observados. É recomendado que os LiveData sejam encapsulados por objetos ViewData. Segue o esquemático de um view model genérico:
-![](readme-res/view-model.svg)
+![](readme-res/view-model.pt-br.dark.svg#gh-dark-mode-only)
+![](readme-res/view-model.pt-br.light.svg#gh-light-mode-only)
 
 #### [`/res`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/res)
 Na pasta res estão os XMLs de apoio à aplicação. 
