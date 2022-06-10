@@ -71,7 +71,8 @@ Esta pasta contém todos os arquivos de código e XMLs necessários para a const
 
 #### [`/java`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/)
 Apesar do nome, dentro dela está todo o código da aplicação, a qual é feita 100% em Kotlin. Os pacotes estão dividos segundo o padrão da arquitetura MVVM. Segue esquemático de uma arquitetura genérica MVVM:
-![](readme-res/mvvm.svg)
+![](readme-res/mvvm.pt-br.dark.svg#gh-dark-mode-only)
+![](readme-res/mvvm.pt-br.light.svg#gh-light-mode-only)
 
 ##### [`/java/io/schiar/tccboilerplate/model`](https://github.com/giovanischiar/tcc-boilerplate/tree/master/app/src/main/java/io/schiar/tccboilerplate/model)
 Onde são implementadas as regras de negócio da aplicação. Dentro desse pacote também estão os repositórios, responsáveis pela requisição de dados. Segue o esquemático de um model genérico:
